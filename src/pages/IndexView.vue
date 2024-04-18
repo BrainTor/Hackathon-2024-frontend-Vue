@@ -7,8 +7,8 @@ const counter = useCounterStore();
 
 <template>
   <main>
-    <h1>Counter: <span> {{ counter.count }} </span></h1>
-    <Button @click="counter.increment()">Increment</Button>
-    <Button @click="counter.decrement()">Decrement</Button>
+    <h1>Счётчик: <span> {{ counter.count }} </span></h1>
+    <Button @click="counter.increment()">Увеличить</Button>
+    <Button @click="counter.decrement()">Уменьшить</Button>
   </main>
 </template>
