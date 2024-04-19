@@ -1,14 +1,32 @@
-<script setup lang="ts">
-import {useCounterStore} from "../stores/counter"
-import Button from "@/components/ui/button/Button.vue";
+<script lang="ts">
 
-const counter = useCounterStore();
+import FooterComponent from '@/components/FooterComponent.vue';
+import NavigationBarCompnent from '@/components/NavigationBarCompnent.vue';
+
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: "IndexView",
+  components: {
+    NavigationBarCompnent,
+    FooterComponent
+  } 
+})
 </script>
 
 <template>
-  <main>
-    <h1>Counter: <span> {{ counter.count }} </span></h1>
-    <Button @click="counter.increment()">Increment</Button>
-    <Button @click="counter.decrement()">Decrement</Button>
-  </main>
+  <div class="main_container"> 
+    <NavigationBarCompnent/>
+
+    <FooterComponent/>
+
+  </div>
 </template>
+
+<style scoped>
+.main_container{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+</style>

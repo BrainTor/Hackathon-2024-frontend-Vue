@@ -1,15 +1,10 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+<script lang="ts">
+import { RouterView } from 'vue-router';
+export default{ 
+    name:'App'
+}
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Index</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+<RouterView/>
 </template>
