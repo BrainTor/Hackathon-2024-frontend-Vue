@@ -19,6 +19,15 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: "ProfileView",
+  components:{
+    SideBarComponent,
+    ProfileMainComponent,
+    NavigationBarCompnent
+
+
+  }
+  ,
+
   beforeRouteEnter() {
     const auth = useAuthenticationStore();
     if (auth.isAuthenticated == "GUEST") router.push("/login");

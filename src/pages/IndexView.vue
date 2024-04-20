@@ -21,7 +21,7 @@ function handleDataFromChild(data:any) {
 
   <ModalComponent v-model="isActive">
     <template #header>
-      <h1 class = "header_text text-white">Подача заявки</h1>
+      <h2 class = "header_text text-white">Подача заявки</h2>
     </template>
     <div class = "container_modal_body">
       <p class = "text_modal text-white">ФИО:</p>
