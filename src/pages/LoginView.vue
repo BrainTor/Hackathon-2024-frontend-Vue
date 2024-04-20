@@ -2,7 +2,7 @@
     <div class = "containerBlock">
         <router-link to='/' style="text-decoration:none;">
             <div class = "logo" >
-               <img src="@/assets/img/imgLogoMain.png" class="logo_img">
+              <img src="@/assets/img/imgLogoMain.png" class="logo_img">
             </div>
         </router-link>
 
@@ -40,7 +40,7 @@
               <div style="display:flex;flex-direction:row; justify-content:space-between;">
                   <p class = "insideText" style="font-size:1rem; margin-bottom:1.5rem">Нет аккаунта?</p>
                   
-                  <router-link to = "/register" class = "insideText" style="font-size:1rem; margin-bottom:1.5rem;color:var(--primary_accent);text-decoration: underline; margin-left:7px;cursor:pointer;"><a > Зарегистрироваться</a></router-link>
+                  <router-link to = "/register" class = "insideText" style="font-family: 'Noto Sans', sans-serif;font-size:1rem; margin-bottom:1.5rem;color:var(--primary_accent);text-decoration: underline; margin-left:7px;cursor:pointer;"><a > Зарегистрироваться</a></router-link>
                   
               </div>
                
@@ -68,6 +68,7 @@
     margin-top:1.4rem;
     color: #FFF5E0;
     cursor:pointer;
+    font-family: "Noto Sans", sans-serif;
     margin-bottom:0px;
 
    
@@ -107,10 +108,6 @@
         flex-direction:row;
         justify-content:center;
       }
-      .logoImg{
-        width:56px;
-        height:56px;
-      }
 
       .insideInput{
         width:85%;
@@ -119,6 +116,7 @@
         border-radius:8px;
         background:#DCDCDC;
         padding-left:40px;
+        color:black;
        
       }
       .insideInput:focus{
@@ -130,8 +128,9 @@
       }
       .checkBoxText{
         font-size:1rem;
-      
+        font-family: "Noto Sans", sans-serif;
         margin-left:0.5rem;
+        margin-top: 0.1rem;
       }
       .insideText{
         margin:0px;
@@ -139,6 +138,7 @@
         margin-bottom:0.8rem;
         font-size:1.21rem;
         color: #FFF5E0;
+        font-family: "Noto Sans", sans-serif;
       }
       #submit{
         width:85%;
@@ -152,7 +152,7 @@
       }
       .titleText{
         margin-top:1.5rem;
-
+        font-family: "Noto Sans", sans-serif;
       }
 
 

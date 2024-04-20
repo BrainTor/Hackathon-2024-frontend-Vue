@@ -1,6 +1,7 @@
 <template>
     <div class = "mainDiv">
-        <img src="@/assets/img/imgLogoMain.png"  class = "logo">
+        <router-link to = "/"><img src="@/assets/img/imgLogoMain.png"  class = "logo"></router-link>
+        
 
         <div>
             <router-link to="/register">
@@ -23,14 +24,8 @@
     </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'NavigationBarCompnent',
- 
-});
 </script>
 
 

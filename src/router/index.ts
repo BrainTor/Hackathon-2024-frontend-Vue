@@ -2,7 +2,7 @@ import IndexView from '@/pages/IndexView.vue'
 import LoginView from '@/pages/LoginView.vue'
 import RegisterView from '@/pages/RegisterView.vue'
 import GetCodeView from '@/pages/GetCodeView.vue'
-
+import ProfileView from '@/pages/ProfileView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
@@ -28,6 +28,11 @@ const router = createRouter({
       path:'/getCode', 
       name:'GetCode',
       component:GetCodeView
+    },
+    {
+      path:'/profile',
+      name:'Profile',
+      component:ProfileView
     }
   ]
 })

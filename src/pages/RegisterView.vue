@@ -9,7 +9,7 @@
   
   
             <div class = "containerInside shadowContainer">
-                <center><h3 class = "titleText">Регистрация</h3></center>
+                <center><h1 class = "titleText">Регистрация</h1></center>
                 <div style = "display:flex;flex-direction:column;align-items:center; margin-bottom:1rem;">
                     <p class = "insideText">Введите email</p>
   
@@ -48,7 +48,7 @@
                   <div style="display:flex;flex-direction:row; justify-content:space-between;">
                       <p class = "insideText" style="font-size:1rem; margin-bottom:1.5rem">Уже есть аккаунт? </p>
                       
-                      <router-link to = "/login" class = "insideText" style="font-size:1rem; margin-bottom:1.5rem;color:var(--primary_accent);text-decoration:underline; margin-left:7px;cursor:pointer;"><a > Войти</a></router-link>
+                      <router-link to = "/login" class = "insideText" style="font-family: 'Noto Sans', sans-serif;font-size:1rem; margin-bottom:1.5rem;color:var(--primary_accent);text-decoration:underline; margin-left:7px;cursor:pointer;"><a > Войти</a></router-link>
                       
                   </div>
                    
@@ -125,8 +125,8 @@ label{
   
   /* Style the checkmark/indicator (default style - hidden) */
   .custom-checkbox .checkmark:after {
-    left: 54.2px;
-    top: 5px;
+    left: 46.3px;
+    top: 6px;
     width: 5px;
     height: 10px;
     border: solid black;
@@ -177,10 +177,6 @@ label{
         flex-direction:row;
         justify-content:center;
       }
-      .logoImg{
-        width:56px;
-        height:56px;
-      }
  
       .insideInput{
         width:85%;
@@ -189,6 +185,7 @@ label{
         border-radius:8px;
         background:#DCDCDC;
         padding-left:40px;
+        color: black;
       }
       .insideInput::placeholder{
         color:red;
@@ -199,6 +196,7 @@ label{
       }
       .insideText{
         margin:0px;
+        font-family: "Noto Sans", sans-serif;
         margin-top:0.6rem;
         margin-bottom:0.6rem;
         font-size:1.05rem;
@@ -218,13 +216,16 @@ label{
       .titleText{
         margin-top:1.5rem;
         color: #FFF5E0;
+        font-family: "Noto Sans", sans-serif;
       }
   
     .checkIDK {
       font-size:0.86rem; 
       cursor:pointer;
       margin-left:7px;
+      margin-top: 0.2rem;
       color: #FFF5E0;
+      font-family: "Noto Sans", sans-serif;
     }
     .checkboxInput{
       transform:scale(1.3);
