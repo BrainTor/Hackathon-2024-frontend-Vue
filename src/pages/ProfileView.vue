@@ -1,38 +1,30 @@
 <template>
-
   <div class="min-h-screen flex flex-col">
     <NavigationBarCompnent class="mb-10" />
     <div class="flex flex-1 overflow-hidden">
-      <SideBarComponent class="container h-auto mb-10 ml-4" />
-      <ProfileMainComponent class="container mb-10" />
+      <SideBarComponent @link-picker="handleData" class="sidebar ml-5" />
+      <ProfileMainComponent :number="childDate" class="profile ml-5 mr-5 mb-10" />
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NavigationBarCompnent from '@/components/NavigationBarCompnent.vue';
 import ProfileMainComponent from '@/components/ProfileMainComponent.vue';
 import SideBarComponent from '@/components/SideBarComponent.vue';
 import router from '@/router';
 import { useAuthenticationStore } from '@/stores';
-import { defineComponent } from 'vue';
+import { onBeforeMount , ref } from 'vue';
 
-export default defineComponent({
-  name: "ProfileView",
-  components:{
-    SideBarComponent,
-    ProfileMainComponent,
-    NavigationBarCompnent
-
-
-  }
-  ,
-
-  beforeRouteEnter() {
-    const auth = useAuthenticationStore();
+onBeforeMount(()=>{
+  const auth = useAuthenticationStore();
     if (auth.isAuthenticated == "GUEST") router.push("/login");
-  }
 })
+let childDate = ref(0)
+function handleData(number:number){
+  childDate.value = number
+}
+
 
 </script>
 
@@ -43,6 +35,34 @@ export default defineComponent({
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+ 
+}
+.profile{
+  background-color: var(--secondary_green);
+  border-radius: 10px;
+}
+.sidebar{
+  background-color: var(--secondary_green);
+  border-radius: 10px;  
 
+}
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    order: -1;
+  }
+  .profile {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 250px;
+  }
+  .profile {
+    flex: 1;
+  }
 }
 </style>
