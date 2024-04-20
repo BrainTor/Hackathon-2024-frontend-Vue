@@ -64,7 +64,7 @@ const close = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
   border-left: 0px;
   border-right: 0px;
 
@@ -78,7 +78,7 @@ const close = () => {
     display: flex;
     width: 100%;
   justify-content: space-between;
-  border: 1px solid black;
+  border: 1px solid whitesmoke;
   border-left: 0px;
   border-right: 0px;
   border-bottom: 0px;

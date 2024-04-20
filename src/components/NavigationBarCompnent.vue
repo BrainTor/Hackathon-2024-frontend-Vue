@@ -59,7 +59,7 @@
         color: #FFF5E0;
     }
     .buttonsLogAndReg:hover{
-        background-color: #222b4f;
+        background-color: #198186;
     }
     .reg_but{
         background-color: transparent;
@@ -68,6 +68,6 @@
     }
     .reg_but:hover{
         background-color: var(--secondary_green);
-        color:black
+    
     }
 </style>

@@ -21,22 +21,22 @@ function handleDataFromChild(data:any) {
 
   <ModalComponent v-model="isActive">
     <template #header>
-      <h1 class = "header_text">Подача заявки</h1>
+      <h1 class = "header_text text-white">Подача заявки</h1>
     </template>
     <div class = "container_modal_body">
-      <p class = "text_modal">ФИО:</p>
+      <p class = "text_modal text-white">ФИО:</p>
       <div class="inputRow">
         <fa class="input-icon correct" icon = "user"/>
         <input class="input_modal" type="text">
       </div>
 
-      <p class = "text_modal">Номер мобильного телефона:</p>
+      <p class = "text_modal text-white">Номер мобильного телефона:</p>
       <div class="inputRow">
         <fa class="input-icon correct" icon = "phone"/>
         <input class="input_modal" type="text">
       </div>
-      <p class = "text_modal_or">или</p>
-      <p class = "text_modal">Ссылка на социальную сеть:</p>
+      <p class = "text_modal_or text-white">или</p>
+      <p class = "text_modal text-white">Ссылка на социальную сеть:</p>
       <div class="inputRow">
         <fa class="input-icon correct" icon = "link"/>
         <input class="input_modal" type="text">
@@ -92,9 +92,10 @@ function handleDataFromChild(data:any) {
   margin-top: 1rem;
   border-radius: 7px;
   transition: 1s;
+  color: white;
 }
 .button_close:hover{
-  background-color: grey;
+  background-color: var(--primary_green);
 }
 .correct{
   left: 9%!important;

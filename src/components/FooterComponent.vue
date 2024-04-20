@@ -41,9 +41,9 @@
 
 
         </div>
-        <div class="container_copyright">
-            <p class="sencond_footer_text">©Copyright Pizda_company</p>
-            <p class="sencond_footer_text" style="margin-right: 0.4rem;">Остались вопросы? <a @click = "sendDataToOpenModal" style="color: blue; text-decoration: underline;">Оставьте заявку</a>  и с вами свяжутся наши специалисты!</p>
+        <div class="container_copyright ">
+            <p class="sencond_footer_text text-white">©Copyright Pizda_company</p>
+            <p class="sencond_footer_text text-white" style="margin-right: 0.4rem;">Остались вопросы? <a @click = "sendDataToOpenModal" style="color: var(--primary_accent); cursor:pointer; text-decoration: underline;">Оставьте заявку</a>  и с вами свяжутся наши специалисты!</p>
         </div>
     </div>
 </template>
@@ -64,7 +64,7 @@ function sendDataToOpenModal(){
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     .sencond_footer_text{
-        color: black;
+        color: white;
         font-family: 'Noto Sans', sans-serif;
     }
     .cobntainer_phone{
@@ -98,7 +98,7 @@ function sendDataToOpenModal(){
     }
 .text{ 
     font-family: "Noto Sans", sans-serif;
-    color: #FFF5E0;
+    color: white;
 }
 .container_copyright{
     width: 100%;

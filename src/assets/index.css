@@ -11,9 +11,9 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
-    --primary_green:#DC6B19 ;
-    --secondary_green:#F7C566;
-    --primary_accent:#6C0345;
+    --primary_green:#222831 ;
+    --secondary_green:rgb(57, 62, 70);
+    --primary_accent:#00ADB5;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
  
@@ -79,6 +79,12 @@ h2              { font-size: 1.5em !important; margin: .75em 0 }
 h3              { font-size: 1.17em !important; margin: .83em 0 }
 h5              { font-size: .83em !important; margin: 1.5em 0 }
 h6              { font-size: .75em !important; margin: 1.67em 0 }
+
+hr{
+  background-color: whitesmoke;
+  border: none;
+  height: 2px;
+}
 
 
 .shadowContainer{

@@ -1,6 +1,7 @@
 <template>
-    <aside class="w-64 bg-gray-700 text-black h-full">
+    <aside class="w-64 bg-gray-700 h-full">
       <ul>
+        <li class="p-2 mt-2 mb-2 text-center cursor-pointer element ">Главная</li>
         <li class="p-2 mt-2 mb-2 text-center cursor-pointer element ">Профиль</li>
         <li class="p-2 mt-2 mb-2 text-center cursor-pointer element">Карта жителя</li>
         <li class="p-2 mt-2 mb-2 text-center cursor-pointer element">Документы и данные</li>

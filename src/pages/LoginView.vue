@@ -38,7 +38,7 @@
             <div style="display:flex;flex-direction:column; align-items:center;">
              <button id="submit" >Войти</button>
               <div style="display:flex;flex-direction:row; justify-content:space-between;">
-                  <p class = "insideText" style="font-size:1rem; margin-bottom:1.5rem">Нет аккаунта?</p>
+                  <p class = "insideText" style ="font-size:1rem; margin-bottom:1.5rem">Нет аккаунта?</p>
                   
                   <router-link to = "/register" class = "insideText" style="font-family: 'Noto Sans', sans-serif;font-size:1rem; margin-bottom:1.5rem;color:var(--primary_accent);text-decoration: underline; margin-left:7px;cursor:pointer;"><a > Зарегистрироваться</a></router-link>
                   
