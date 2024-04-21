@@ -3,7 +3,9 @@ import LoginView from '@/pages/LoginView.vue'
 import RegisterView from '@/pages/RegisterView.vue'
 import GetCodeView from '@/pages/GetCodeView.vue'
 import ProfileView from '@/pages/ProfileView.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
+import GetAuth from '@/pages/getAuth.vue'
 
 
 const router = createRouter({
@@ -33,6 +35,11 @@ const router = createRouter({
       path:'/profile',
       name:'Profile',
       component:ProfileView
+    },
+    {
+      path: '/getAuth',
+      name:'Auth', 
+      component:GetAuth
     }
   ]
 })
