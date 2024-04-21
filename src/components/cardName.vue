@@ -1,7 +1,7 @@
 <template>
     <div style = "position: relative; width: fit-content; height: fit-content;">
         <img src="@/assets/img/backgroundImg.jpeg" class = "imgCard">
-        <div style = " font-family: 'Noto Sans' , sans-serif;">
+        <div style = " font-family: 'Noto Sans' , sans-serif; ">
 
             <div class="flex flex-col cont_layer">
 
@@ -37,7 +37,7 @@
     height: 60px;
 }
 .imgCard{
-    width: 320px;
+    width: 320px !important;
     border-radius: 14px;
 }
 .cont_layer{

@@ -101,6 +101,7 @@ import { ref, computed } from 'vue';
 .element {
   padding: 20px;
   text-align: center;
+  font-family: "Noto Sans", sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: background-color 0.6s;
