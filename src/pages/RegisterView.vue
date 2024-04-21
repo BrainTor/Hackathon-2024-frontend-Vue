@@ -215,7 +215,7 @@ label {
 
 .containerInside {
   width: 370px;
-  height: 550px;
+  height: 650px;
   background: var(--primary_green);
   margin-top: 1.5rem;
   border-radius: 12px;

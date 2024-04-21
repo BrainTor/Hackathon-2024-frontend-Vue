@@ -6,7 +6,7 @@
       Главная
     </h1>
     <h2>Карта:</h2>
-    <div class="flex">
+    <div class="flex flex-wrap">
       <CardName>
         <template #money>
           <p class="money">{{ card?.balance ?? 0 }}р</p>
@@ -24,7 +24,7 @@
         <p class="text-lg">Владелец: <b>{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName }}</b> </p>
 
 
-        <button class="replenish_but">Пополнить</button>
+        <button class="replenish_but" @click = "sendDataToParent" >Пополнить</button>
       </div>
 
 
@@ -206,13 +206,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineEmits, watch, ref } from 'vue';
+import { defineComponent, defineEmits, watch,  inject } from 'vue';
 import CardName from './cardName.vue';
 import { useAuthenticationStore } from '@/stores';
 import type { Card, Transaction, User } from '@/utils/types';
 import { client } from '@/utils/axios';
 const emit = defineEmits(['vis']);
 
+import type { GlobalState } from '@/stores/types';
+
+const globalState = inject<GlobalState>('globalState')!;
 export default defineComponent({
   name: "ProfileMainComponent",
   props: {
@@ -258,7 +261,7 @@ export default defineComponent({
   },
   methods: {
     sendDataToParent() {
-      emit('vis', true)
+      globalState.toggleModal()
     }
   }
 })
