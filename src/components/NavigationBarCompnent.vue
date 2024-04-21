@@ -1,5 +1,11 @@
 <template>
+
+   
     <div class = "mainDiv">
+
+
+     
+    
         <router-link to = "/"><img src="@/assets/img/imgLogoMain.png"  class = "logo"></router-link>
         
 
@@ -41,12 +47,18 @@
             </DropDown>
         </div>
     </div>
+
+
+    
 </template>
 
 <script setup lang="ts">
 
-import  {onBeforeMount} from 'vue';
+import  {onBeforeMount , inject} from 'vue';
 import  {useAuthenticationStore}  from '@/stores';
+import type { GlobalState } from '@/stores/types';
+
+const globalState = inject<GlobalState>('globalState')!;
 
 import { ref } from 'vue';
 import DropDown from './DropDown.vue';
@@ -54,7 +66,6 @@ import router from '@/router';
 
 const authClient = useAuthenticationStore();
 const isOpen = ref(false);
-
 
 let auth = ref(false)
 
@@ -69,7 +80,8 @@ function selectItem(item:any) {
             router.push('/profile')
             break
         case 2:
-            alert('Тут модалка пополнения')
+            globalState.toggleModal()
+            
             isOpen.value = false; 
             break
         case 3:
@@ -84,7 +96,6 @@ function selectItem(item:any) {
 
 onBeforeMount(()=>{
 
-    
         if (localStorage.getItem("authentication.jwt") !== null) {
             authClient.signIn(localStorage.getItem("authentication.jwt")!!)
                 .then(() => {

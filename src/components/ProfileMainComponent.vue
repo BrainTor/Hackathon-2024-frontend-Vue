@@ -36,8 +36,8 @@
 
     </div>
 
-    <div class="w-full flex justify-between doc_cont">
-      <p class="text-xl">Снилс</p>
+    <div class = "w-full flex justify-between doc_cont">
+      <p class = "text-lg">Снилс</p>
 
       <button class="edit_butt">
         Изменить
@@ -47,8 +47,8 @@
 
 
 
-    <div class="w-full flex justify-between doc_cont">
-      <p class="text-xl">ИНН</p>
+  <div class = "w-full flex justify-between doc_cont">
+    <p class = "text-lg">ИНН</p>
 
       <button class="edit_butt">
         Добавить
@@ -107,10 +107,10 @@
 
   </div>
 
-  <div v-else-if="cont[2]" class="flex-1 p-10 ">
-    <h1>Карта жителя</h1>
+  <div v-else-if="cont[2]" class="flex-1 p-10">
+      <h1>Карта жителя</h1>
 
-    <div class="flex">
+    <div class="flex flex-wrap">
       <CardName>
         <template #money>
           <p class="money">{{card?.balance ?? 0}}р</p>
@@ -126,12 +126,12 @@
         <p class="text-lg">Владелец: <b>{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName }}</b> </p>
 
 
-        <button class="replenish_but">Пополнить</button>
+        <button class = "replenish_but" @click="sendDataToParent">Пополнить</button>
+       </div>
+   
+ 
       </div>
-
-
-    </div>
-    <h2>История транзакций:</h2>
+      <h2>История транзакций:</h2>
 
     <div class="flex w-full justify-between mt-2 mb-2 pb-2 transaction_cont">
       <p class="text-lg"> Оплата Поездки</p>
@@ -173,28 +173,26 @@
 
 
   <div v-else-if="cont[4]" class="flex-1 p-10 main_sec">
-    <h1>Безопастность</h1>
+    <h1 style ="align-self: start;">Безопастность</h1>
 
-    <div class="container_sec">
-      <h3>Пароль</h3>
-      <button class="edit_butt">Изменить</button>
+    <div class = "container_sec">
+        <h3 class="font">Пароль</h3>
+        <button class = "edit_butt">Изменить</button>
     </div>
+
+    <div class = "container_sec">
+        <div>
+            <h3 class = "font">Вход без пароля</h3>
+            <p class = "font">Необходим для удостоверения личности при выезде и пребывании за пределами государства.</p>
+        </div>
+        <button class = "edit_butt">Включить</button>
+    </div>
+
 
     <div class="container_sec">
       <div>
-        <h3>Вход без пароля</h3>
-        <p>Необходим для удостоверения личности при выезде и пребывании за пределами государства.</p>
-      </div>
-      <button class="edit_butt">Включить</button>
-    </div>
-
-
-    <div class="container_sec">
-      <div>
-        <h3>Двухфакторная аутентификация </h3>
-        <p>Включите двухфакторную аутентификацию, чтобы повысить защищенность вашей учетной записи. Тогда злоумышленник
-          не
-          сможет получить доступ к аккаунту, завладев логином и паролем.</p>
+          <h3 class = "font">Двухфакторная аутентификация </h3>
+          <p class = "font">Включите двухфакторную аутентификацию, чтобы повысить защищенность вашей учетной записи. Тогда злоумышленник не сможет получить доступ к аккаунту, завладев логином и паролем.</p>
       </div>
       <button class="edit_butt">Включить</button>
     </div>
@@ -265,13 +263,14 @@ hr {
   border: none;
   height: 2px;
 }
-
-.edit_butt {
-  height: 45px;
-  align-self: center;
-  padding: 0px 12px;
-  border-radius: 8px;
-  transition: 0.4s;
+.edit_butt{
+    height: 45px;
+    align-self: center;
+    padding: 0px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.4s;
+    font-family: 'Noto Sans' , sans-serif;
 
 }
 
@@ -288,6 +287,10 @@ hr {
 .title {
 
   font-size: 15pt;
+}
+
+.font{
+  font-family: 'Noto Sans' , sans-serif;
 }
 
 .for_font {
@@ -314,13 +317,14 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-family: 'Noto Sans' , sans-serif;
   align-items: center;
 }
 
 
 .replenish_but {
   background-color: var(--primary_accent);
-  font-size: 17.6px;
+  font-size: 18px;
   width: 100%;
   height: 40px;
   margin-top: 0.6rem;
@@ -338,7 +342,7 @@ hr {
 
 .doc_cont {
   border: 2px solid whitesmoke;
-  padding: 8px;
+  padding: 12px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
