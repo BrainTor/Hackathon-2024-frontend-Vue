@@ -206,12 +206,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineEmits, watch,  inject } from 'vue';
+import { defineComponent,  watch,  inject } from 'vue';
 import CardName from './cardName.vue';
 import { useAuthenticationStore } from '@/stores';
 import type { Card, Transaction, User } from '@/utils/types';
 import { client } from '@/utils/axios';
-const emit = defineEmits(['vis']);
+
 
 import type { GlobalState } from '@/stores/types';
 
