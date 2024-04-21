@@ -9,16 +9,18 @@
     <div class="flex">
       <CardName>
         <template #money>
-          <p class="money">{{card?.balance ?? 0}}р</p>
+          <p class="money">{{ card?.balance ?? 0 }}р</p>
         </template>
       </CardName>
       <div class="ml-6">
         <h2 class="mt-0">Данные карты:</h2>
         <p class="text-lg">Номер карты:</p>
 
-        <p><b>{{card?.permanentAccountNumber ?? 0}}</b> </p>
+        <p><b>{{ card?.permanentAccountNumber ?? 0 }}</b> </p>
 
-        <p class="text-lg">Действителен до: <b>{{(new Date(card?.expiration??0)).getUTCMonth().toString().padStart(2, '0')}}/{{ Array.from((new Date(card?.expiration??0)).getUTCFullYear().toString()).slice(2).join('') }}</b> </p>
+        <p class="text-lg">Действителен до: <b>{{ (new Date(card?.expiration ?? 0)).getUTCMonth().toString().padStart(2,
+            '0')}}/{{ Array.from((new Date(card?.expiration ?? 0)).getUTCFullYear().toString()).slice(2).join('') }}</b>
+        </p>
         <p class="text-lg">Владелец: <b>{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName }}</b> </p>
 
 
@@ -36,8 +38,8 @@
 
     </div>
 
-    <div class = "w-full flex justify-between doc_cont">
-      <p class = "text-lg">Снилс</p>
+    <div class="w-full flex justify-between doc_cont">
+      <p class="text-lg">Снилс</p>
 
       <button class="edit_butt">
         Изменить
@@ -47,8 +49,8 @@
 
 
 
-  <div class = "w-full flex justify-between doc_cont">
-    <p class = "text-lg">ИНН</p>
+    <div class="w-full flex justify-between doc_cont">
+      <p class="text-lg">ИНН</p>
 
       <button class="edit_butt">
         Добавить
@@ -68,7 +70,8 @@
       <h2 class="self-start font-semibold">Личная информация:</h2>
       <div class="flex flex-col w-full comp p-4">
         <div class="flex justify-between w-full ">
-          <p style="font-size: 17pt;" class="font-extrabold">{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName }}</p>
+          <p style="font-size: 17pt;" class="font-extrabold">{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName
+            }}</p>
           <button class="edit_butt" disabled>Редактировать</button>
         </div>
         <!-- <p class="title">Пол</p>
@@ -94,7 +97,7 @@
         <div class="flex justify-between w-full mt-1 items-center">
           <div class="flex flex-col">
             <p class="title">Электронная почта</p>
-            <p class="font-extrabold">{{user?.email}}</p>
+            <p class="font-extrabold">{{ user?.email }}</p>
           </div>
 
           <button class="edit_butt" disabled>Редактировать</button>
@@ -108,30 +111,32 @@
   </div>
 
   <div v-else-if="cont[2]" class="flex-1 p-10">
-      <h1>Карта жителя</h1>
+    <h1>Карта жителя</h1>
 
     <div class="flex flex-wrap">
       <CardName>
         <template #money>
-          <p class="money">{{card?.balance ?? 0}}р</p>
+          <p class="money">{{ card?.balance ?? 0 }}р</p>
         </template>
       </CardName>
       <div class="ml-6">
         <h2 class="mt-0">Данные карты:</h2>
         <p class="text-lg">Номер карты:</p>
 
-        <p><b>{{card?.permanentAccountNumber ?? 0}}</b> </p>
+        <p><b>{{ card?.permanentAccountNumber ?? 0 }}</b> </p>
 
-        <p class="text-lg">Действителен до: <b>{{(new Date(card?.expiration??0)).getUTCMonth().toString().padStart(2, '0')}}/{{ Array.from((new Date(card?.expiration??0)).getUTCFullYear().toString()).slice(2).join('') }}</b> </p>
+        <p class="text-lg">Действителен до: <b>{{ (new Date(card?.expiration ?? 0)).getUTCMonth().toString().padStart(2,
+            '0')}}/{{ Array.from((new Date(card?.expiration ?? 0)).getUTCFullYear().toString()).slice(2).join('') }}</b>
+        </p>
         <p class="text-lg">Владелец: <b>{{ user?.lastName }} {{ user?.firstName }} {{ user?.dadName }}</b> </p>
 
 
-        <button class = "replenish_but" @click="sendDataToParent">Пополнить</button>
-       </div>
-   
- 
+        <button class="replenish_but" @click="sendDataToParent">Пополнить</button>
       </div>
-      <h2>История транзакций:</h2>
+
+
+    </div>
+    <h2>История транзакций:</h2>
 
     <div class="flex w-full justify-between mt-2 mb-2 pb-2 transaction_cont">
       <p class="text-lg"> Оплата Поездки</p>
@@ -173,26 +178,27 @@
 
 
   <div v-else-if="cont[4]" class="flex-1 p-10 main_sec">
-    <h1 style ="align-self: start;">Безопастность</h1>
+    <h1 style="align-self: start;">Безопастность</h1>
 
-    <div class = "container_sec">
-        <h3 class="font">Пароль</h3>
-        <button class = "edit_butt">Изменить</button>
+    <div class="container_sec">
+      <h3 class="font">Пароль</h3>
+      <button class="edit_butt">Изменить</button>
     </div>
 
-    <div class = "container_sec">
-        <div>
-            <h3 class = "font">Вход без пароля</h3>
-            <p class = "font">Необходим для удостоверения личности при выезде и пребывании за пределами государства.</p>
-        </div>
-        <button class = "edit_butt">Включить</button>
+    <div class="container_sec">
+      <div>
+        <h3 class="font">Вход без пароля</h3>
+        <p class="font">Необходим для удостоверения личности при выезде и пребывании за пределами государства.</p>
+      </div>
+      <button class="edit_butt">Включить</button>
     </div>
 
 
     <div class="container_sec">
       <div>
-          <h3 class = "font">Двухфакторная аутентификация </h3>
-          <p class = "font">Включите двухфакторную аутентификацию, чтобы повысить защищенность вашей учетной записи. Тогда злоумышленник не сможет получить доступ к аккаунту, завладев логином и паролем.</p>
+        <h3 class="font">Двухфакторная аутентификация </h3>
+        <p class="font">Включите двухфакторную аутентификацию, чтобы повысить защищенность вашей учетной записи. Тогда
+          злоумышленник не сможет получить доступ к аккаунту, завладев логином и паролем.</p>
       </div>
       <button class="edit_butt">Включить</button>
     </div>
@@ -200,11 +206,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineProps, watch, ref } from 'vue';
+import { defineComponent, defineEmits, watch, ref } from 'vue';
 import CardName from './cardName.vue';
 import { useAuthenticationStore } from '@/stores';
 import type { Card, Transaction, User } from '@/utils/types';
 import { client } from '@/utils/axios';
+const emit = defineEmits(['vis']);
 
 export default defineComponent({
   name: "ProfileMainComponent",
@@ -214,7 +221,7 @@ export default defineComponent({
       required: true
     }
   },
-  components: {CardName},
+  components: { CardName },
   mounted() {
     let cont = [true, false, false, false, false]
     watch(() => this.$props.number, (newValue, oldValue) => {
@@ -231,16 +238,16 @@ export default defineComponent({
     (async () => {
       const auth = useAuthenticationStore();
       const user = auth.user;
-      const cardResp = await client.get<{ card: Card }>("/cards/@me/", {headers: {Authorization: `Bearer ${auth.userJwt!!}`}});
-      const transactionResp = await client.get<{ transactions: Transaction[] }>("/cards/@me/transactions", {headers: {Authorization: `Bearer ${auth.userJwt!!}`}});
+      const cardResp = await client.get<{ card: Card }>("/cards/@me/", { headers: { Authorization: `Bearer ${auth.userJwt!!}` } });
+      const transactionResp = await client.get<{ transactions: Transaction[] }>("/cards/@me/transactions", { headers: { Authorization: `Bearer ${auth.userJwt!!}` } });
       this.user = user;
       this.card = cardResp.data.card;
       this.transactions = transactionResp.data.transactions;
     })();
   },
-  
+
   data() {
-    
+
     return {
       card: null as Card | null,
       user: null as User | null,
@@ -249,6 +256,11 @@ export default defineComponent({
       props: this.$props
     }
   },
+  methods: {
+    sendDataToParent() {
+      emit('vis', true)
+    }
+  }
 })
 
 </script>
@@ -263,14 +275,15 @@ hr {
   border: none;
   height: 2px;
 }
-.edit_butt{
-    height: 45px;
-    align-self: center;
-    padding: 0px 12px;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: 0.4s;
-    font-family: 'Noto Sans' , sans-serif;
+
+.edit_butt {
+  height: 45px;
+  align-self: center;
+  padding: 0px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: 0.4s;
+  font-family: 'Noto Sans', sans-serif;
 
 }
 
@@ -289,8 +302,8 @@ hr {
   font-size: 15pt;
 }
 
-.font{
-  font-family: 'Noto Sans' , sans-serif;
+.font {
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .for_font {
@@ -317,7 +330,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-family: 'Noto Sans' , sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   align-items: center;
 }
 
