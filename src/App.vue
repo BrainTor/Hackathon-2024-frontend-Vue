@@ -11,7 +11,6 @@ export default defineComponent({
     },
     mounted() {
         const auth = useAuthenticationStore();
-
         if (localStorage.getItem("authentication.jwt") !== null) {
             auth.signIn(localStorage.getItem("authentication.jwt")!!)
                 .then(() => this.canWork = true);

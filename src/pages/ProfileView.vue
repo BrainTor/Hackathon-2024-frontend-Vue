@@ -14,14 +14,15 @@ import ProfileMainComponent from '@/components/ProfileMainComponent.vue';
 import SideBarComponent from '@/components/SideBarComponent.vue';
 import router from '@/router';
 import { useAuthenticationStore } from '@/stores';
-import { onBeforeMount , ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 
-onBeforeMount(()=>{
+onBeforeMount(() => {
   const auth = useAuthenticationStore();
-    if (auth.isAuthenticated == "GUEST") router.push("/login");
+  if (auth.isAuthenticated == "LOGGEDIN" && auth.user?.accountState == "EMAIL_VERIFICATION") router.push("/getCode");
+  if (auth.isAuthenticated == "LOGGEDIN" && auth.user?.accountState == "DISABLED") { auth.logout(); router.push("/"); }
 })
 let childDate = ref(0)
-function handleData(number:number){
+function handleData(number: number) {
   childDate.value = number
 }
 
@@ -35,23 +36,27 @@ function handleData(number:number){
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
- 
+
 }
-.profile{
+
+.profile {
   background-color: var(--secondary_green);
   border-radius: 10px;
 }
-.sidebar{
+
+.sidebar {
   background-color: var(--secondary_green);
-  border-radius: 10px;  
+  border-radius: 10px;
 
 }
+
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
   .sidebar {
     width: 100%;
     order: -1;
   }
+
   .profile {
     width: 100%;
   }
@@ -61,6 +66,7 @@ function handleData(number:number){
   .sidebar {
     width: 250px;
   }
+
   .profile {
     flex: 1;
   }

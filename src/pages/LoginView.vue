@@ -26,7 +26,7 @@
 
         <p class="forgotPass">Забыли пароль?</p>
 
-<!-- 
+        <!-- 
         <div class="rowCheckBox">
           <input type="checkbox" style="transform:scale(1.40);">
           <p class="checkBoxText">Запомнить меня</p>
@@ -189,7 +189,8 @@ export default defineComponent({
   },
   beforeRouteEnter() {
     const auth = useAuthenticationStore();
-    if (auth.isAuthenticated == "LOGGEDIN") router.push("/profile");
+    if (auth.isAuthenticated == "LOGGEDIN" && (auth.user?.accountState === "DOCUMENT_VERIFICATION" || auth.user?.accountState === "VERIFIED")) router.push("/profile");
+    if (auth.isAuthenticated == "LOGGEDIN" && auth.user?.accountState === "EMAIL_VERIFICATION") router.push("/getCode");
 
   },
   methods: {
@@ -198,12 +199,12 @@ export default defineComponent({
       const password = this.passwordInput;
       const auth = useAuthenticationStore();
 
-      const resp = await client.post<{user: User, jwt: string}>("http://127.0.0.1:3000/auth/signIn", {
+      const resp = await client.post<{ user: User, jwt: string }>("http://127.0.0.1:3000/auth/signIn", {
         credential,
         password
       });
       if (resp.status != 200) {
-        // push notification to notification service
+        // TODO: push notification to notification service
         console.error(resp.data)
       }
       else {

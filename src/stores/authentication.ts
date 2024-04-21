@@ -15,11 +15,12 @@ export const useAuthenticationStore = defineStore('authentication', () => {
     localStorage.removeItem("authentication.jwt");
   }
   async function signIn(jwt: string) {
-    if (authenticationStatus.value == "GUEST") {
+    console.log(jwt)
+    if (authenticationStatus.value == "GUEST" || authenticationStatus.value == "WAITING") {
       const resp = await client.get<{ user: User }>("/users/@me", { headers: { Authorization: `Bearer ${jwt}` } });
       console.log("ok", resp.data, resp.status)
       if (resp.status != 200) {
-        // push notification to notification service
+        // TODO:push notification to notification service
         console.error(resp.data)
       }
       else {

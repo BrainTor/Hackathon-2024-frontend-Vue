@@ -72,6 +72,9 @@ importers:
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
+      prisma-generator-typescript-interfaces:
+        specifier: ^1.4.0
+        version: 1.4.0
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
@@ -480,6 +483,12 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
+
+  '@prisma/debug@5.12.1':
+    resolution: {integrity: sha512-kd/wNsR0klrv79o1ITsbWxYyh4QWuBidvxsXSParPsYSu0ircUmNk3q4ojsgNc3/81b0ozg76iastOG43tbf8A==}
+
+  '@prisma/generator-helper@5.12.1':
+    resolution: {integrity: sha512-TlaI4J6jDKO06P68ve5czz1SionzI5ciUIw2tWFO4FM4qPID5+7nrxTVlecFTUD7Nc+IaO1hYT1YBOPKLiUncQ==}
 
   '@radix-icons/vue@1.0.0':
     resolution: {integrity: sha512-gKWWk9tTK/laDRRNe5KLLR8A0qUwx4q4+DN8Fq48hJ904u78R82ayAO3TrxbNLgyn2D0h6rRiGdLzQWj7rPcvA==}
@@ -1303,6 +1312,10 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  prisma-generator-typescript-interfaces@1.4.0:
+    resolution: {integrity: sha512-wPzkXn+dovhsMr5SJYZpg7Eo9O5625YuN7OSX/5FiWxDfMmHOTBcnufo0mFGBKC7YVwhMRGOjsOvItRdxkaPvw==}
+    hasBin: true
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -1971,6 +1984,12 @@ snapshots:
     optional: true
 
   '@polka/url@1.0.0-next.25': {}
+
+  '@prisma/debug@5.12.1': {}
+
+  '@prisma/generator-helper@5.12.1':
+    dependencies:
+      '@prisma/debug': 5.12.1
 
   '@radix-icons/vue@1.0.0(vue@3.4.23(typescript@5.4.5))':
     dependencies:
@@ -2735,6 +2754,10 @@ snapshots:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.2.0
+
+  prisma-generator-typescript-interfaces@1.4.0:
+    dependencies:
+      '@prisma/generator-helper': 5.12.1
 
   proxy-from-env@1.1.0: {}
 

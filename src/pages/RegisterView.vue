@@ -17,7 +17,14 @@
 
           <div class="inputRow">
             <fa class="input-icon" icon="user" />
-            <input v-model="loginInput" type="email" ref="emailInput" class="insideInput">
+            <input v-model="emailInput" type="email" ref="emailInput" class="insideInput">
+          </div>
+
+          <p class="insideText">Введите логин</p>
+
+          <div class="inputRow">
+            <fa class="input-icon" icon="user" />
+            <input v-model="loginInput" type="text" ref="loginInput" class="insideInput">
           </div>
 
           <p class="insideText">Введите Пароль</p>
@@ -46,7 +53,7 @@
         </div>
 
         <div style="display:flex;flex-direction:column; align-items:center;">
-          <button id="submit">Зарегистрироваться</button>
+          <button id="submit" @click="onSubmitClicked">Зарегистрироваться</button>
           <div style="display:flex;flex-direction:row; justify-content:space-between;">
             <p class="insideText" style="font-size:1rem; margin-bottom:1.5rem">Уже есть аккаунт? </p>
 
@@ -66,12 +73,15 @@
 <script lang="ts">
 import { useAuthenticationStore } from '@/stores';
 import { defineComponent } from 'vue';
+import { client } from '@/utils/axios';
+import type { User } from '@/utils/types';
 import router from '@/router';
 
 export default defineComponent({
   name: 'RegisterVue',
   data() {
     return {
+      emailInput: '',
       loginInput: '',
       passwordInput: '',
       rePasswordInput: '',
@@ -81,8 +91,37 @@ export default defineComponent({
   },
   beforeRouteEnter() {
     const auth = useAuthenticationStore();
-    if (auth.isAuthenticated == "LOGGEDIN") router.push("/profile");
+    if (auth.isAuthenticated == "LOGGEDIN" && (auth.user?.accountState === "DOCUMENT_VERIFICATION" || auth.user?.accountState === "VERIFIED")) router.push("/profile");
+    if (auth.isAuthenticated == "LOGGEDIN" && auth.user?.accountState === "EMAIL_VERIFICATION") router.push("/getCode");
   },
+  methods: {
+    async onSubmitClicked() {
+      if (this.passwordInput !== this.rePasswordInput) {
+        // TODO: error system
+        alert("пароли не совпадают.")
+        return
+      }
+      const email = this.emailInput;
+      const login = this.loginInput;
+      const password = this.passwordInput;
+      const auth = useAuthenticationStore();
+
+      const resp = await client.post<{user: User, jwt: string}>("http://127.0.0.1:3000/auth/register", {
+        email,
+        login,
+        password
+      });
+      if (resp.status != 200) {
+        // TODO: push notification to notification service
+        console.error(resp.data)
+      }
+      else {
+        if (await auth.signIn(resp.data.jwt)) {
+          router.push("/getCode");
+        }
+      }
+    }
+  }
 })
 </script>
 
