@@ -37,7 +37,7 @@
       </div>
   
       <div class="container_copyright">
-        <p class="second_footer_text" style="margin-right: 1rem;">©Copyright Pizda_company</p>
+        <p class="second_footer_text" style="margin-right: 1rem;">©Copyright no_company</p>
         <p class="second_footer_text">
           Остались вопросы? <a @click="sendDataToOpenModal" class="contact_us">Оставьте заявку</a> и с вами свяжутся наши специалисты!
         </p>
