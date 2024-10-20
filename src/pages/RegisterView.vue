@@ -22,11 +22,7 @@
 
           <p class="insideText">Введите логин</p>
 
-          <div class="inputRow">
-            <fa class="input-icon" icon="user" />
-            <input v-model="loginInput" type="text" ref="loginInput" class="insideInput">
-          </div>
-
+      
           <p class="insideText">Введите Пароль</p>
 
           <div class="inputRow">
